@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maanam Hridaya - Empowering Children Through Education</title>
+    <meta name="description" content="Maanam Hridaya is a nonprofit organization empowering children with essential digital literacy and basic hygiene knowledge.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for simple interactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- Our styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body x-data="{ mobileMenuOpen: false }">
+
+    <!-- ========== HEADER ========== -->
+    <!-- Easy to edit: Change navigation links below -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <img src="/images/logo.png" alt="Maanam Hridaya Logo" class="logo-img">
+                <span class="logo-text">Maanam Hridaya</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="/" class="nav-link active">Home</a>
+                <a href="/team.html" class="nav-link">Our Team</a>
+                <a href="#contact" class="btn btn-primary btn-sm">
+                    <span class="heart-icon">&#10084;</span> Donate
+                </a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" @click="mobileMenuOpen = !mobileMenuOpen">
+                <span x-show="!mobileMenuOpen">&#9776;</span>
+                <span x-show="mobileMenuOpen">&#10005;</span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" x-show="mobileMenuOpen" x-transition>
+            <a href="/" class="nav-link active">Home</a>
+            <a href="/team.html" class="nav-link">Our Team</a>
+            <a href="#contact" class="btn btn-primary">Donate</a>
+        </nav>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <!-- Easy to edit: Change the main headline and subtitle below -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        
+        <div class="container hero-content">
+            <div class="hero-logo-container">
+                <img src="/images/logo.png" alt="M&H" class="hero-logo animate-float">
+            </div>
+            
+            <h1 class="hero-title">
+                Empowering Children,<br>
+                <span class="text-gradient">One Heart at a Time</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Beyond core subjects, we aim to empower children with essential digital literacy 
+                and basic hygiene knowledge—until each child becomes a teacher for the next.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    <span class="heart-icon">&#10084;</span> Support Our Mission
+                </a>
+                <a href="#mission" class="btn btn-outline btn-lg">
+                    Learn More &#8595;
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">&#8595;</div>
+    </section>
+
+    <!-- ========== MISSION SECTION ========== -->
+    <!-- Easy to edit: Update mission text and statistics below -->
+    <section class="section section-alt" id="mission">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-image-container">
+                    <img src="/images/mission.png" alt="Our Mission" class="mission-image card-3d">
+                </div>
+                
+                <div class="mission-content">
+                    <span class="section-label">Our Mission</span>
+                    <h2 class="section-title">Creating a Chain of Knowledge</h2>
+                    
+                    <div class="mission-text">
+                        <p>At Maanam Hridaya, we believe every child deserves access to quality education that goes beyond textbooks. Our programs focus on essential life skills that empower children to thrive in the modern world.</p>
+                        
+                        <p>We teach digital literacy, helping children navigate technology safely and effectively. We emphasize basic hygiene practices that promote health and well-being in their communities.</p>
+                        
+                        <p>Our unique approach creates a ripple effect—each child we teach becomes a teacher for the next, spreading knowledge throughout their community and creating lasting change.</p>
+                    </div>
+                    
+                    <!-- Statistics - Easy to update numbers here -->
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Children Reached</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Events Organized</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Volunteers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAST EVENTS SECTION ========== -->
+    <!-- Easy to edit: Add/remove event cards below -->
+    <section class="section" id="events">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Impact</span>
+                <h2 class="section-title">Events We've Organized</h2>
+                <p class="section-desc">Take a look at some of the meaningful events we've organized to make a difference in our community.</p>
+            </div>
+            
+            <div class="events-scroll" x-data="{ activeEvent: null }">
+                <!-- Event Card 1 -->
+                <div class="event-card card-3d" @mouseenter="activeEvent = 1" @mouseleave="activeEvent = null">
+                    <div class="event-image">
+                        <img src="/images/children_learning_in_classroom.png" alt="Basic Education Workshop">
+                        <span class="event-badge">Education</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">&#128197; November 15, 2024</div>
+                        <h3 class="event-title">Basic Education Workshop</h3>
+                        <p class="event-desc">A comprehensive workshop teaching foundational reading and writing skills to 50+ children in the local community.</p>
+                    </div>
+                </div>
+                
+                <!-- Event Card 2 -->
+                <div class="event-card card-3d" @mouseenter="activeEvent = 2" @mouseleave="activeEvent = null">
+                    <div class="event-image">
+                        <img src="/images/community_tree_planting_event.png" alt="Community Tree Plantation">
+                        <span class="event-badge">Environment</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">&#128197; October 22, 2024</div>
+                        <h3 class="event-title">Community Tree Plantation</h3>
+                        <p class="event-desc">Volunteers and children came together to plant 200+ saplings, promoting environmental awareness.</p>
+                    </div>
+                </div>
+                
+                <!-- Event Card 3 -->
+                <div class="event-card card-3d" @mouseenter="activeEvent = 3" @mouseleave="activeEvent = null">
+                    <div class="event-image">
+                        <img src="/images/health_hygiene_workshop_children.png" alt="Health & Hygiene Camp">
+                        <span class="event-badge">Health</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">&#128197; September 10, 2024</div>
+                        <h3 class="event-title">Health & Hygiene Camp</h3>
+                        <p class="event-desc">Interactive sessions on personal hygiene, handwashing techniques, and healthy habits for young learners.</p>
+                    </div>
+                </div>
+                
+                <!-- Event Card 4 -->
+                <div class="event-card card-3d" @mouseenter="activeEvent = 4" @mouseleave="activeEvent = null">
+                    <div class="event-image">
+                        <img src="/images/digital_literacy_class_children.png" alt="Digital Literacy Program">
+                        <span class="event-badge">Technology</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">&#128197; August 5, 2024</div>
+                        <h3 class="event-title">Digital Literacy Program</h3>
+                        <p class="event-desc">Introducing children to computers and the internet, teaching them safe online practices and basic skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== UPCOMING EVENTS SECTION ========== -->
+    <!-- Easy to edit: Update upcoming events with new dates/info -->
+    <section class="section section-alt" id="upcoming">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Join Us</span>
+                <h2 class="section-title">Upcoming Events</h2>
+                <p class="section-desc">Be part of our upcoming initiatives and help us create a positive impact in our community.</p>
+            </div>
+            
+            <div class="upcoming-grid">
+                <!-- Upcoming Event 1 -->
+                <div class="upcoming-card card-3d">
+                    <span class="upcoming-badge">Festival</span>
+                    <h3 class="upcoming-title">Winter Learning Festival</h3>
+                    <div class="upcoming-details">
+                        <div class="upcoming-detail">&#128197; January 20, 2025</div>
+                        <div class="upcoming-detail">&#128336; 10:00 AM - 4:00 PM</div>
+                        <div class="upcoming-detail">&#128205; Community Center Hall</div>
+                    </div>
+                    <p class="upcoming-desc">A full day of interactive learning activities, games, and workshops for children of all ages.</p>
+                    <button class="btn btn-outline btn-block">Register Interest</button>
+                </div>
+                
+                <!-- Upcoming Event 2 -->
+                <div class="upcoming-card card-3d">
+                    <span class="upcoming-badge">Technology</span>
+                    <h3 class="upcoming-title">Computer Basics for Kids</h3>
+                    <div class="upcoming-details">
+                        <div class="upcoming-detail">&#128197; February 5, 2025</div>
+                        <div class="upcoming-detail">&#128336; 2:00 PM - 5:00 PM</div>
+                        <div class="upcoming-detail">&#128205; M&H Learning Center</div>
+                    </div>
+                    <p class="upcoming-desc">Introduction to computers, typing, and basic internet safety for beginners.</p>
+                    <button class="btn btn-outline btn-block">Register Interest</button>
+                </div>
+                
+                <!-- Upcoming Event 3 -->
+                <div class="upcoming-card card-3d">
+                    <span class="upcoming-badge">Health</span>
+                    <h3 class="upcoming-title">Health Awareness Week</h3>
+                    <div class="upcoming-details">
+                        <div class="upcoming-detail">&#128197; February 14-20, 2025</div>
+                        <div class="upcoming-detail">&#128336; Various Times</div>
+                        <div class="upcoming-detail">&#128205; Multiple Locations</div>
+                    </div>
+                    <p class="upcoming-desc">Week-long series of health camps focusing on nutrition, hygiene, and physical wellness.</p>
+                    <button class="btn btn-outline btn-block">Register Interest</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <!-- Easy to edit: Update contact info and donation message -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-label">Get In Touch</span>
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="contact-intro">We'd love to hear from you! Whether you want to volunteer, partner with us, or simply learn more about our work, reach out and we'll get back to you soon.</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">&#9993;</div>
+                            <div>
+                                <strong>Email</strong><br>
+                                <a href="mailto:contact@manamhridaya.org">contact@manamhridaya.org</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">&#9742;</div>
+                            <div>
+                                <strong>Phone</strong><br>
+                                <a href="tel:+919876543210">+91 98765 43210</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">&#128205;</div>
+                            <div>
+                                <strong>Location</strong><br>
+                                Bangalore, Karnataka, India
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="donate-card card-3d">
+                    <div class="donate-icon">&#10084;</div>
+                    <h3 class="donate-title">Support Our Cause</h3>
+                    <p class="donate-text">Your contribution helps us reach more children and create lasting change. Every donation, big or small, makes a difference in a child's life.</p>
+                    <p class="donate-subtext">To contribute, please contact us directly via email or phone. We accept donations through various payment methods including bank transfer, UPI, and more.</p>
+                    <a href="mailto:donate@manamhridaya.org" class="btn btn-primary btn-lg btn-block">
+                        &#9993; Contact to Donate
+                    </a>
+                    <a href="mailto:donate@manamhridaya.org" class="donate-email">donate@manamhridaya.org</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <!-- Easy to edit: Update links and contact info -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="/images/logo.png" alt="Maanam Hridaya" class="footer-logo-img">
+                        <span>Maanam Hridaya</span>
+                    </div>
+                    <p>Empowering children with essential digital literacy and basic hygiene knowledge—until each child becomes a teacher for the next.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/team.html">Our Team</a>
+                    <a href="#mission">Our Mission</a>
+                    <a href="#events">Events</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <a href="mailto:contact@manamhridaya.org">contact@manamhridaya.org</a>
+                    <a href="tel:+919876543210">+91 98765 43210</a>
+                    <span>Bangalore, Karnataka, India</span>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Maanam Hridaya. All rights reserved.</p>
+                <p>Made with &#10084; for the community</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animation Script -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

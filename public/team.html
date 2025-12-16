@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Maanam Hridaya</title>
+    <meta name="description" content="Meet the dedicated team behind Maanam Hridaya nonprofit organization.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for simple interactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- Our styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body x-data="{ mobileMenuOpen: false }">
+
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <img src="/images/logo.png" alt="Maanam Hridaya Logo" class="logo-img">
+                <span class="logo-text">Maanam Hridaya</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/team.html" class="nav-link active">Our Team</a>
+                <a href="/#contact" class="btn btn-primary btn-sm">
+                    <span class="heart-icon">&#10084;</span> Donate
+                </a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" @click="mobileMenuOpen = !mobileMenuOpen">
+                <span x-show="!mobileMenuOpen">&#9776;</span>
+                <span x-show="mobileMenuOpen">&#10005;</span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" x-show="mobileMenuOpen" x-transition>
+            <a href="/" class="nav-link">Home</a>
+            <a href="/team.html" class="nav-link active">Our Team</a>
+            <a href="/#contact" class="btn btn-primary">Donate</a>
+        </nav>
+    </header>
+
+    <!-- ========== TEAM HERO ========== -->
+    <section class="team-hero">
+        <div class="container">
+            <span class="section-label">Meet The Team</span>
+            <h1 class="page-title">Our Core Members</h1>
+            <p class="page-subtitle">Behind Maanam Hridaya is a dedicated team of volunteers who work tirelessly to bring education and hope to children in our community.</p>
+        </div>
+    </section>
+
+    <!-- ========== TEAM MEMBERS ========== -->
+    <!-- Easy to edit: Add/remove/modify team member cards below -->
+    <section class="section">
+        <div class="container">
+            <div class="team-grid">
+                
+                <!-- Team Member 1 - President -->
+                <div class="team-card card-3d">
+                    <div class="team-avatar">
+                        <span class="avatar-initials">DK</span>
+                    </div>
+                    <h3 class="team-name">Diya Karthik</h3>
+                    <div class="team-role">President</div>
+                    <div class="team-divider"></div>
+                    <p class="team-desc">Diya leads Maanam Hridaya with passion and vision, coordinating all organizational activities and building partnerships with communities.</p>
+                </div>
+                
+                <!-- Team Member 2 - Lead Web Developer -->
+                <div class="team-card card-3d">
+                    <div class="team-avatar">
+                        <span class="avatar-initials">PR</span>
+                    </div>
+                    <h3 class="team-name">Prajan</h3>
+                    <div class="team-role">Lead Web Developer</div>
+                    <div class="team-divider"></div>
+                    <p class="team-desc">Prajan handles all technical aspects of our digital presence, ensuring our message reaches communities far and wide through technology.</p>
+                </div>
+                
+                <!-- Team Member 3 - Vice President -->
+                <div class="team-card card-3d">
+                    <div class="team-avatar">
+                        <span class="avatar-initials">AM</span>
+                    </div>
+                    <h3 class="team-name">Arjun Menon</h3>
+                    <div class="team-role">Vice President</div>
+                    <div class="team-divider"></div>
+                    <p class="team-desc">Arjun supports organizational leadership and manages volunteer coordination, ensuring smooth execution of all our programs.</p>
+                </div>
+                
+                <!-- Team Member 4 - Education Director -->
+                <div class="team-card card-3d">
+                    <div class="team-avatar">
+                        <span class="avatar-initials">SR</span>
+                    </div>
+                    <h3 class="team-name">Sneha Reddy</h3>
+                    <div class="team-role">Education Director</div>
+                    <div class="team-divider"></div>
+                    <p class="team-desc">Sneha designs and oversees our educational curriculum, bringing innovative teaching methods to make learning engaging for children.</p>
+                </div>
+                
+                <!-- Team Member 5 - Event Coordinator -->
+                <div class="team-card card-3d">
+                    <div class="team-avatar">
+                        <span class="avatar-initials">KS</span>
+                    </div>
+                    <h3 class="team-name">Kiran Sharma</h3>
+                    <div class="team-role">Event Coordinator</div>
+                    <div class="team-divider"></div>
+                    <p class="team-desc">Kiran plans and executes our community events, ensuring each initiative creates meaningful impact and lasting memories.</p>
+                </div>
+                
+                <!-- Team Member 6 - Outreach Lead -->
+                <div class="team-card card-3d">
+                    <div class="team-avatar">
+                        <span class="avatar-initials">MP</span>
+                    </div>
+                    <h3 class="team-name">Meera Patel</h3>
+                    <div class="team-role">Outreach Lead</div>
+                    <div class="team-divider"></div>
+                    <p class="team-desc">Meera connects with communities and organizations to expand our reach and build lasting relationships for greater impact.</p>
+                </div>
+                
+            </div>
+            
+            <!-- Join Team CTA -->
+            <div class="join-team-card">
+                <h3>Want to Join Our Team?</h3>
+                <p>We're always looking for passionate individuals who want to make a difference. If you'd like to volunteer or contribute your skills, we'd love to hear from you!</p>
+                <a href="mailto:volunteer@manamhridaya.org" class="join-email">volunteer@manamhridaya.org</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="/images/logo.png" alt="Maanam Hridaya" class="footer-logo-img">
+                        <span>Maanam Hridaya</span>
+                    </div>
+                    <p>Empowering children with essential digital literacy and basic hygiene knowledge—until each child becomes a teacher for the next.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/team.html">Our Team</a>
+                    <a href="/#mission">Our Mission</a>
+                    <a href="/#events">Events</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <a href="mailto:contact@manamhridaya.org">contact@manamhridaya.org</a>
+                    <a href="tel:+919876543210">+91 98765 43210</a>
+                    <span>Bangalore, Karnataka, India</span>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Maanam Hridaya. All rights reserved.</p>
+                <p>Made with &#10084; for the community</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animation Script -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
