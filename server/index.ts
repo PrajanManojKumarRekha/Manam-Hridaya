@@ -81,15 +81,10 @@ app.use((req, res, next) => {
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
   const port = parseInt(process.env.PORT || "5000", 10);
-  httpServer.listen(
-    {
-      port,
-      host: "0.0.0.0",
-      reusePort: true,
-    },
-    () => {
-      log(`serving on port ${port}`);
-      log(`Static files served from: ${publicPath}`);
-    },
-  );
+  
+  // Fixed for Windows compatibility - removed host binding options
+  httpServer.listen(port, () => {
+    log(`serving on http://localhost:${port}`);
+    log(`Static files served from: ${publicPath}`);
+  });
 })();
